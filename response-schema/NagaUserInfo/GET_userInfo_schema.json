@@ -1,0 +1,741 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "info": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": {}
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "salutation": {
+          "type": "null"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "birth_date": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "null"
+        },
+        "status": {
+          "type": "string"
+        },
+        "user_bo_status": {
+          "type": "string"
+        },
+        "archive_reason": {
+          "type": "null"
+        },
+        "country": {
+          "type": "string"
+        },
+        "is_eu": {
+          "type": "boolean"
+        },
+        "city": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        },
+        "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "null"
+        },
+        "email": {
+          "type": "string"
+        },
+        "is_email_confirmed": {
+          "type": "boolean"
+        },
+        "email_confirmed_status": {
+          "type": "string"
+        },
+        "company_id": {
+          "type": "string"
+        },
+        "phone_code": {
+          "type": "null"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "phone_number_confirmed": {
+          "type": "string"
+        },
+        "registered_since": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "null"
+        },
+        "reason_for_registration": {
+          "type": "string"
+        },
+        "year_of_birth": {
+          "type": "integer"
+        },
+        "trade_experience": {
+          "type": "string"
+        },
+        "has_trading_account": {
+          "type": "null"
+        },
+        "terminals_data": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "terminal_id": {
+                  "type": "integer"
+                },
+                "broker_id": {
+                  "type": "integer"
+                },
+                "broker_name": {
+                  "type": "string"
+                },
+                "broker_server_id": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "terminal_bo_status": {
+                  "type": "string"
+                },
+                "trades": {
+                  "type": "integer"
+                },
+                "is_password_valid": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "terminal_id",
+                "broker_id",
+                "broker_name",
+                "broker_server_id",
+                "type",
+                "status",
+                "terminal_bo_status",
+                "trades",
+                "is_password_valid"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "terminal_id": {
+                  "type": "integer"
+                },
+                "broker_id": {
+                  "type": "integer"
+                },
+                "broker_name": {
+                  "type": "string"
+                },
+                "broker_server_id": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "terminal_bo_status": {
+                  "type": "string"
+                },
+                "trades": {
+                  "type": "integer"
+                },
+                "is_password_valid": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "terminal_id",
+                "broker_id",
+                "broker_name",
+                "broker_server_id",
+                "type",
+                "status",
+                "terminal_bo_status",
+                "trades",
+                "is_password_valid"
+              ]
+            }
+          ]
+        },
+        "app_language": {
+          "type": "string"
+        },
+        "is_badge_tutorial_completed": {
+          "type": "boolean"
+        },
+        "is_appropriate": {
+          "type": "boolean"
+        },
+        "is_swipestox_secret": {
+          "type": "boolean"
+        },
+        "is_kyc_submitted": {
+          "type": "boolean"
+        },
+        "is_nagaico_approved": {
+          "type": "boolean"
+        },
+        "is_wallet_prepared": {
+          "type": "boolean"
+        },
+        "is_exchange_fee_in_ngc": {
+          "type": "boolean"
+        },
+        "is_blacklisted": {
+          "type": "boolean"
+        },
+        "is_flexible": {
+          "type": "boolean"
+        },
+        "is_google_linked": {
+          "type": "boolean"
+        },
+        "is_facebook_linked": {
+          "type": "boolean"
+        },
+        "is_apple_linked": {
+          "type": "boolean"
+        },
+        "is_telegram_linked": {
+          "type": "boolean"
+        },
+        "registered_from": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "terminal_groups": {
+          "type": "null"
+        },
+        "store": {
+          "type": "null"
+        },
+        "device_type": {
+          "type": "null"
+        },
+        "device_name": {
+          "type": "null"
+        },
+        "invite_code": {
+          "type": "string"
+        },
+        "invited_by": {
+          "type": "null"
+        },
+        "selected_badges": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "null"
+            },
+            "color": {
+              "type": "null"
+            },
+            "images": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "title",
+            "color",
+            "images"
+          ]
+        },
+        "automatic_ro_date": {
+          "type": "null"
+        },
+        "user_level": {
+          "type": "string"
+        },
+        "user_type": {
+          "type": "string"
+        },
+        "additional_data": {
+          "type": "object",
+          "properties": {
+            "aff": {
+              "type": "null"
+            },
+            "cid": {
+              "type": "null"
+            },
+            "cxd": {
+              "type": "null"
+            },
+            "fbc": {
+              "type": "null"
+            },
+            "pid": {
+              "type": "null"
+            },
+            "s_id": {
+              "type": "null"
+            },
+            "gclid": {
+              "type": "null"
+            },
+            "cl_aff": {
+              "type": "null"
+            },
+            "ib_group": {
+              "type": "string"
+            },
+            "utm_term": {
+              "type": "null"
+            },
+            "aml_score": {
+              "type": "number"
+            },
+            "bo_status": {
+              "type": "string"
+            },
+            "mt4_group": {
+              "type": "string"
+            },
+            "qs_reason": {
+              "type": "null"
+            },
+            "risk_score": {
+              "type": "null"
+            },
+            "utm_device": {
+              "type": "null"
+            },
+            "utm_medium": {
+              "type": "null"
+            },
+            "utm_source": {
+              "type": "null"
+            },
+            "cl_campaign": {
+              "type": "null"
+            },
+            "utm_content": {
+              "type": "null"
+            },
+            "utm_country": {
+              "type": "null"
+            },
+            "utm_keyword": {
+              "type": "null"
+            },
+            "aml_category": {
+              "type": "string"
+            },
+            "has_autocopy": {
+              "type": "boolean"
+            },
+            "utm_campaign": {
+              "type": "null"
+            },
+            "utm_creative": {
+              "type": "null"
+            },
+            "utm_language": {
+              "type": "null"
+            },
+            "utm_targetid": {
+              "type": "null"
+            },
+            "overall_score": {
+              "type": "integer"
+            },
+            "source_medium": {
+              "type": "string"
+            },
+            "utm_adgroupid": {
+              "type": "null"
+            },
+            "utm_matchtype": {
+              "type": "null"
+            },
+            "utm_placement": {
+              "type": "null"
+            },
+            "utm_adposition": {
+              "type": "null"
+            },
+            "utm_campaignid": {
+              "type": "null"
+            },
+            "utm_feeditemid": {
+              "type": "null"
+            },
+            "has_funded_fiat": {
+              "type": "boolean"
+            },
+            "prev_user_level": {
+              "type": "string"
+            },
+            "utm_adgroupname": {
+              "type": "null"
+            },
+            "utm_landingpage": {
+              "type": "null"
+            },
+            "risk_score_limit": {
+              "type": "null"
+            },
+            "trades_generated": {
+              "type": "null"
+            },
+            "utm_campaignname": {
+              "type": "null"
+            },
+            "suitability_score": {
+              "type": "null"
+            },
+            "high_risk_accepted": {
+              "type": "integer"
+            },
+            "suitability_status": {
+              "type": "string"
+            },
+            "trading_experience": {
+              "type": "string"
+            },
+            "utm_loc_interest_ms": {
+              "type": "null"
+            },
+            "utm_loc_physical_ms": {
+              "type": "null"
+            },
+            "user_level_requested": {
+              "type": "null"
+            },
+            "asset_types_available": {
+              "type": "null"
+            },
+            "bo_status_reason_code": {
+              "type": "null"
+            },
+            "trading_risk_category": {
+              "type": "null"
+            },
+            "nagaico_decline_reason": {
+              "type": "null"
+            },
+            "financial_situation_score": {
+              "type": "integer"
+            },
+            "investment_objective_score": {
+              "type": "integer"
+            },
+            "knowledge_experience_score": {
+              "type": "integer"
+            },
+            "trading_risk_category_data": {
+              "type": "object",
+              "properties": {
+                "INFO": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "INFO"
+              ]
+            },
+            "is_excluded_from_leaderboard": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "aff",
+            "cid",
+            "cxd",
+            "fbc",
+            "pid",
+            "s_id",
+            "gclid",
+            "cl_aff",
+            "ib_group",
+            "utm_term",
+            "aml_score",
+            "bo_status",
+            "mt4_group",
+            "qs_reason",
+            "risk_score",
+            "utm_device",
+            "utm_medium",
+            "utm_source",
+            "cl_campaign",
+            "utm_content",
+            "utm_country",
+            "utm_keyword",
+            "aml_category",
+            "has_autocopy",
+            "utm_campaign",
+            "utm_creative",
+            "utm_language",
+            "utm_targetid",
+            "overall_score",
+            "source_medium",
+            "utm_adgroupid",
+            "utm_matchtype",
+            "utm_placement",
+            "utm_adposition",
+            "utm_campaignid",
+            "utm_feeditemid",
+            "has_funded_fiat",
+            "prev_user_level",
+            "utm_adgroupname",
+            "utm_landingpage",
+            "risk_score_limit",
+            "trades_generated",
+            "utm_campaignname",
+            "suitability_score",
+            "high_risk_accepted",
+            "suitability_status",
+            "trading_experience",
+            "utm_loc_interest_ms",
+            "utm_loc_physical_ms",
+            "user_level_requested",
+            "asset_types_available",
+            "bo_status_reason_code",
+            "trading_risk_category",
+            "nagaico_decline_reason",
+            "financial_situation_score",
+            "investment_objective_score",
+            "knowledge_experience_score",
+            "trading_risk_category_data",
+            "is_excluded_from_leaderboard"
+          ]
+        },
+        "adjust_device_id": {
+          "type": "null"
+        },
+        "manager": {
+          "type": "null"
+        },
+        "nagapay_status": {
+          "type": "null"
+        },
+        "nagapay_data": {
+          "type": "null"
+        },
+        "nx_status": {
+          "type": "null"
+        },
+        "upgrade_date": {
+          "type": "string"
+        },
+        "questionnaires": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "platform": {
+                  "type": "string"
+                },
+                "status_code": {
+                  "type": "string"
+                },
+                "status_comment": {
+                  "type": "null"
+                },
+                "questionnaire_id": {
+                  "type": "integer"
+                },
+                "questionnaire_type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "platform",
+                "status_code",
+                "status_comment",
+                "questionnaire_id",
+                "questionnaire_type"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "platform": {
+                  "type": "string"
+                },
+                "status_code": {
+                  "type": "string"
+                },
+                "status_comment": {
+                  "type": "null"
+                },
+                "questionnaire_id": {
+                  "type": "integer"
+                },
+                "questionnaire_type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "platform",
+                "status_code",
+                "status_comment",
+                "questionnaire_id",
+                "questionnaire_type"
+              ]
+            }
+          ]
+        },
+        "first_fund_date": {
+          "type": "string"
+        },
+        "first_trade_activity_date": {
+          "type": "string"
+        },
+        "trading_risk_category": {
+          "type": "integer"
+        },
+        "department": {
+          "type": "string"
+        },
+        "force_mfa": {
+          "type": "boolean"
+        },
+        "mfa_enabled": {
+          "type": "boolean"
+        },
+        "kyc_beginner_risk_accepted": {
+          "type": "boolean"
+        },
+        "terms_accepted": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "user_id",
+        "user_name",
+        "salutation",
+        "first_name",
+        "last_name",
+        "birth_date",
+        "gender",
+        "status",
+        "user_bo_status",
+        "archive_reason",
+        "country",
+        "is_eu",
+        "city",
+        "zip",
+        "address1",
+        "address2",
+        "email",
+        "is_email_confirmed",
+        "email_confirmed_status",
+        "company_id",
+        "phone_code",
+        "phone_number",
+        "phone_number_confirmed",
+        "registered_since",
+        "nationality",
+        "reason_for_registration",
+        "year_of_birth",
+        "trade_experience",
+        "has_trading_account",
+        "terminals_data",
+        "app_language",
+        "is_badge_tutorial_completed",
+        "is_appropriate",
+        "is_swipestox_secret",
+        "is_kyc_submitted",
+        "is_nagaico_approved",
+        "is_wallet_prepared",
+        "is_exchange_fee_in_ngc",
+        "is_blacklisted",
+        "is_flexible",
+        "is_google_linked",
+        "is_facebook_linked",
+        "is_apple_linked",
+        "is_telegram_linked",
+        "registered_from",
+        "platform",
+        "terminal_groups",
+        "store",
+        "device_type",
+        "device_name",
+        "invite_code",
+        "invited_by",
+        "selected_badges",
+        "automatic_ro_date",
+        "user_level",
+        "user_type",
+        "additional_data",
+        "adjust_device_id",
+        "manager",
+        "nagapay_status",
+        "nagapay_data",
+        "nx_status",
+        "upgrade_date",
+        "questionnaires",
+        "first_fund_date",
+        "first_trade_activity_date",
+        "trading_risk_category",
+        "department",
+        "force_mfa",
+        "mfa_enabled",
+        "kyc_beginner_risk_accepted",
+        "terms_accepted"
+      ]
+    },
+    "req_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "success",
+    "info",
+    "errors",
+    "data",
+    "req_id"
+  ]
+}

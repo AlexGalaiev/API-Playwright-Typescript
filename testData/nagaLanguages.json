@@ -1,0 +1,15 @@
+{
+    "success": true,
+    "info": {
+        "code": 200,
+        "message": ""
+    },
+    "errors": [],
+    "data": [
+        {
+            "name": "Arabic",
+            "code": "ar"
+        }
+    ],
+    "req_id": "1531761140575320"
+}
