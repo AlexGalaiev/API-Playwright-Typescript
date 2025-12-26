@@ -15,6 +15,7 @@ export class FakeUser implements User{
     email: string;
     phoneNumber: string;
     bio: string
+    username: string
 
     
     constructor(){
@@ -23,6 +24,7 @@ export class FakeUser implements User{
         this.email = fakerEN.internet.email()
         this.phoneNumber = fakerEN.phone.number({style:'national'})
         this.bio = fakerEN.person.bio()
+        this.username = fakerEN.internet.username()
     }
 
 

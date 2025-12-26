@@ -79,13 +79,13 @@ const products: Product[] = [
   { id: 4, name: "Keyboard", price: 110, available: true },
   { id: 5, name: "Webcam", price: 90, available: true },
 ];
-function getExpensiveAvailableProductNames(data: Product[]){
-    let names = []
-    let dat = data.filter(dat => dat.available === true && dat.price >= 100)
-    dat.forEach(n => names.push(n.name))
-    console.log(names)
+// function getExpensiveAvailableProductNames(data: Product[]){
+//     let names = []
+//     let dat = data.filter(dat => dat.available === true && dat.price >= 100)
+//     dat.forEach(n => names.push(n.name))
+//     console.log(names)
 
-}
+// }
 //getExpensiveAvailableProductNames(products)
 
 

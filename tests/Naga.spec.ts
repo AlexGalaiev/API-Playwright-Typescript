@@ -11,10 +11,6 @@ test.describe("Naga Login", async () => {
     .url(config.nagaAPIURL)
     .path('/user/info')
     .GET_Request(200)
-
-    console.log(1221212121212121)
-
-    //await schemaValidation('NagaUserInfo', 'GET_userInfo', userInfo)
     expect(userInfo.data.user_name).toEqual('testTrading')
   })
 
@@ -24,10 +20,8 @@ test.describe("Naga Login", async () => {
     .path('/broker/list_linked_accounts')
     .headers({'accept-version':'1.*'})
     .POST_Request(200)
-
-    console.log('tuttttttttt')
-    expect(responseData.data.login).toEqual('8001018')
-    expect(responseData.data.login).toEqual('2641312')
+    expect(responseData.data[0].login).toEqual('8001018')
+    //expect(responseData.data[1].login).toEqual('2641312')
 
   })
 

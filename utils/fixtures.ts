@@ -34,7 +34,6 @@ export const test = base.extend<TestOptions>({
             }
         })
         let requestHandler = new RequestHandler(apiNaga, config.nagaAPIURL, logger)
-        console.log('fixture')
         await use(requestHandler)
     },
 })

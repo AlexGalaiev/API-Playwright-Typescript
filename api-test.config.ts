@@ -4,7 +4,7 @@ const env = processEnv || 'my'
 
 const config = {
     baseUrl: 'https://conduit-api.bondaracademy.com/api',
-    baseEmail: 'testTrading@i.ua',
+    baseEmail: 'testTrading2',
     basePassword: 'Test123!',
     petShopUrl: 'https://petstore.swagger.io/v2',
     nagaAPIURL: 'https://api-v2.naga.com'
