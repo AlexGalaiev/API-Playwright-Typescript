@@ -7,7 +7,8 @@ const config = {
     baseEmail: 'testTrading2',
     basePassword: 'Test123!',
     petShopUrl: 'https://petstore.swagger.io/v2',
-    nagaAPIURL: 'https://api-v2.naga.com'
+    nagaAPIURL: 'https://api-v2.naga.com',
+    websiteNaga: 'https://nagaadminblog.naga.com/api'
 }
 
 if(env === 'bondar'){

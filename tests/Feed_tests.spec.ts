@@ -4,14 +4,15 @@ import {test} from "../utils/fixtures"
 
 test.describe('Feed tests', async()=>{
 
+    let userId;
+
     test('Create post', async({apiNaga, config})=>{
-        let randomPerson = new FakeUser()
+        let randomPerson = new FakeUser().username
         let createPost = await apiNaga
         .url(config.nagaAPIURL)
         .path("/user/activity/post_status")
-        .headers({'accept-version':'2.*'})
         .body({
-                "message": `${randomPerson.username}`,
+                "message": `${randomPerson}`,
                 "medias": {
                     "images": [],
                     "videos": [],
@@ -24,5 +25,15 @@ test.describe('Feed tests', async()=>{
                 "is_share_symbol_opinion": false
         })
         .POST_Request(200)
+        userId = createPost.data.data.data.user_id1 
+        let posts = await apiNaga
+        .url(config.nagaAPIURL)
+        .path(`/user/activity/feed/profile/${userId}/browse`)
+        .body({"from":0,"to":20,"filter":"all"})
+        .POST_Request(200)
+        console.log(posts)
+        expect(posts.data.user_events.user_message[0].data.description).toEqual(randomPerson)
+
     })
+
 })
