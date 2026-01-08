@@ -1,7 +1,7 @@
-import { config, off } from "process"
 import { test } from "../utils/fixtures"
 import { expect } from "@playwright/test"
-import {z} from "zod" 
+import {paymentMethods} from "../response-schema/website_response_schemas"
+import { productVericalsSchema } from "../response-schema/website_response_schemas"
 
 test.describe("Naga website. Check payment providers", async()=>{
 
@@ -42,27 +42,44 @@ for(const data of payments) {
     test(`Check payment method -${data.id}-${data.key}`, async({api, config})=>{
         let actualObject = response.find((item:any) => item.id === data.id )
         expect(actualObject, `Payment with ${data.id} is not defined in response`).toBeDefined()
-        
-        let expectedObjectResponse = z.object({
-            "id": z.literal(data.id),
-            "internal_name": z.literal(data.key),
-            "show_on_fsa": z.literal(data.fsa),
-            "show_on_nm": z.literal(data.nm),
-            "show_on_adgm": z.literal(data.adgm),
-            "show_on_za": z.literal(data.za),
-            "show_on_nm_es": z.literal(data.es),
-            "icon":z.object({
-                "id": z.number(),
-                "name": z.string(),
-                "alternativeText": z.string(),
-                "url": z.url(),
-                "width": z.number(),
-                "height": z.number(),
-                "formats": z.null()
-        })
-    })
-    //let responsesArray = z.array(expectedObjectResponse)
+        let expectedObjectResponse = paymentMethods(data.id, data.key, data.fsa, data.nm, data.adgm, data.za, data.es)
     let result = expectedObjectResponse.safeParse(actualObject)
     expect(result.success).toBeTruthy()
     })
 }})
+
+test.describe('Naga website - product verticals', async()=>{
+    let response: any
+    
+    test.beforeAll('Get product verticals response', async({api, config})=>{
+        response = await api.url(config.websiteNaga).path("/get-products-verticals").GET_Request(200)
+    })
+
+    type ProductVerticals = {
+        id: number,
+        key: string,
+        fsa: boolean,
+        nm: boolean,
+        adgm: boolean,
+        za: boolean
+    }
+    const productVerticals: ProductVerticals[] = [
+        {'id':3, 'key':'crypto', 'fsa':true, 'nm':false, 'adgm':true, 'za':true},
+        {'id':5, 'key':'crypto-nm', 'fsa':false, 'nm':true, 'adgm':false, 'za':false},
+        {'id':2, 'key':'invest', 'fsa':true, 'nm':true, 'adgm':true, 'za':false},
+        {'id':4, 'key':'pay', 'fsa':true, 'nm':false, 'adgm':true, 'za':true},
+        {'id':6, 'key':'pay-nm', 'fsa':false, 'nm':true, 'adgm':false, 'za':false},
+        {'id':1, 'key':'trade', 'fsa':true, 'nm':true, 'adgm':true, 'za':true}
+    ]
+    for(const products of productVerticals){
+        test(`Checlk product ->${products.key} with different regulation`, async()=>{
+            let activeTab = response.find((item:any)=> item.id === products.id)
+            expect(activeTab, `Tab ${activeTab} is not been displayed`).toBeDefined()
+            let instrumentTab= productVericalsSchema(products.id, products.key, products.fsa, products.nm, products.adgm, products.za)
+            let result = instrumentTab.safeParse(activeTab)
+            expect(result.success).toBeTruthy()
+
+        })
+    }
+
+})
