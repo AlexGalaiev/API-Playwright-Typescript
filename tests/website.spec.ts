@@ -2,6 +2,7 @@ import { test } from "../utils/fixtures"
 import { expect } from "@playwright/test"
 import {paymentMethods} from "../response-schema/website_response_schemas"
 import { productVericalsSchema } from "../response-schema/website_response_schemas"
+import productVerticals from "..//testData/website_productVerticals.json"
 
 test.describe("Naga website. Check payment providers", async()=>{
 
@@ -83,3 +84,4 @@ test.describe('Naga website - product verticals', async()=>{
     }
 
 })
+

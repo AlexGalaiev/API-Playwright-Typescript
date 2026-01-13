@@ -1,0 +1,83 @@
+import {z} from "zod"
+
+export const updatePost = z.object({
+    "success": z.boolean(),
+    "info": z.object({
+        "code": z.number(),
+        "message": z.string()
+    }),
+    "errors": z.array(z.unknown()),
+    "data":z.object({
+        "activity_id": z.number(),
+        "activity_type": z.number(),
+        "advertisement_id": z.null(),
+        "audience": z.null(),
+        "comments": z.number(),
+        "contest_id": z.null(),
+        "cover_image": z.null(),
+        "creation_date": z.iso.datetime(),
+        "deep_link": z.null(),
+        "dislikes": z.number(),
+        "event": z.string(),
+        "expiration_date": z.null(),
+        "extended_score": z.number(),
+        "group": z.string(),
+        "hashtags": z.array(z.unknown()),
+        "is_liked": z.null(),
+        "is_live_or_verified_account": z.null(),
+        "is_pinned": z.null(),
+        "is_pinned_global": z.null(),
+        "is_pinned_global_feed": z.null(),
+        "is_pinned_profile": z.null(),
+        "is_pinned_symbol": z.null(),
+        "language": z.string(),
+        "last_like_date": z.null(),
+        "last_update_date": z.iso.datetime(),
+        "likes": z.number(),
+        "location": z.null(),
+        "medias":z.object({
+            "images": z.array(z.unknown()),
+            "urls": z.array(z.unknown()),
+            "videos": z.array(z.unknown())
+        }),
+        "message": z.string(),
+        "message_1": z.string(),
+        "message_2": z.string(),
+        "mood":z.object(),
+        "order_id": z.null(),
+        "placeholder": z.null(),
+        "placeholder_1": z.null(),
+        "placeholder_2": z.null(),
+        "placeholder_data":z.object({
+            "selected_badges_1": z.object(z.unknown()),
+            "user_country": z.object({
+                "code": z.string(),
+                "name": z.string()
+            }),
+            "user_id": z.number(),
+            "user_id1": z.number(),
+            "user_name": z.string()
+        }),
+        "post_id": z.number(),
+        "premoderation_status": z.number(),
+        "publication_date": z.null(),
+        "recent_commenters": z.array(z.unknown()),
+        "recent_likers": z.array(z.unknown()),
+        "score": z.number(),
+        "scraped_url": z.null(),
+        "shared_activity_id": z.null(),
+        "shared_activity_type": z.null(),
+        "signal_id": z.null(),
+        "symbol": z.null(),
+        "symbol_name": z.null(),
+        "tagged_symbols": z.array(z.unknown()),
+        "tagged_users": z.array(z.unknown()),
+        "terminal_id": z.null(),
+        "terminal_type": z.null(),
+        "title_translations": z.null(),
+        "user_comments": z.array(z.unknown()),
+        "user_id1": z.number(),
+        "user_id2": z.null()
+    }),
+    "req_id": z.string()
+})

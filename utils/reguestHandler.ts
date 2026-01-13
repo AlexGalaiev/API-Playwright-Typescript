@@ -87,7 +87,7 @@ export class RequestHandler{
 
     async PUT_Request(statusCode: number){
         let url = this.getUrl()
-        this.logger.logReguest('POST', url, {'headers': this.apiHeaders}, this.apiBody)
+        this.logger.logReguest('PUT', url, {'headers': this.apiHeaders}, this.apiBody)
         let response = await this.request.put(
             url, {
                 headers: this.apiHeaders, 

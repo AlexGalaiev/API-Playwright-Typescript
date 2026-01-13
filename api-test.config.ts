@@ -18,7 +18,7 @@ if(env === 'bondar'){
 }
 if(env === 'my'){
     config.baseUrl = 'https://conduit-api.bondaracademy.com/api';
-    config.baseEmail = 'testTrading@i.ua';
+    config.baseEmail = 'testTrading2';
     config.basePassword = 'Test123!'
 }
 if(env === 'petshop'){
