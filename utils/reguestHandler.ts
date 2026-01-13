@@ -85,6 +85,28 @@ export class RequestHandler{
         return await data
     }
 
+    async POST_Request_withSavingState(statusCode: number, stateStorage?:string){
+        let url = this.getUrl()
+        this.logger.logReguest('POST', url, {'headers': this.apiHeaders}, this.apiBody)
+        let response = await this.request.post(
+            url, {
+                headers: this.apiHeaders, 
+                data: this.apiBody
+            })
+        this.cleanUpFileds()
+        let actualStatus = await response.status()
+        let data =  await response.json()
+        
+        this.logger.logResponse(actualStatus, data)
+        this.statusCodeValidator(actualStatus, statusCode, this.POST_Request)
+        let state = null
+        if(stateStorage){
+            state = await this.request.storageState({path:stateStorage})
+        }
+        return await data
+    }
+
+
     async PUT_Request(statusCode: number){
         let url = this.getUrl()
         this.logger.logReguest('PUT', url, {'headers': this.apiHeaders}, this.apiBody)

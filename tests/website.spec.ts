@@ -2,7 +2,6 @@ import { test } from "../utils/fixtures"
 import { expect } from "@playwright/test"
 import {paymentMethods} from "../response-schema/website_response_schemas"
 import { productVericalsSchema } from "../response-schema/website_response_schemas"
-import productVerticals from "..//testData/website_productVerticals.json"
 
 test.describe("Naga website. Check payment providers", async()=>{
 
@@ -42,7 +41,7 @@ const payments: PaymentMethod[] = [
 for(const data of payments) {
     test(`Check payment method -${data.id}-${data.key}`, async({api, config})=>{
         let actualObject = response.find((item:any) => item.id === data.id )
-        expect(actualObject, `Payment with ${data.id} is not defined in response`).toBeDefined()
+        expect(actualObject, `Payment with ${data.id} is not defined in response`).toBeTruthy()
         let expectedObjectResponse = paymentMethods(data.id, data.key, data.fsa, data.nm, data.adgm, data.za, data.es)
     let result = expectedObjectResponse.safeParse(actualObject)
     expect(result.success).toBeTruthy()

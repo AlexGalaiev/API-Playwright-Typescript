@@ -8,7 +8,11 @@ const config = {
     basePassword: 'Test123!',
     petShopUrl: 'https://petstore.swagger.io/v2',
     nagaAPIURL: 'https://api-v2.naga.com',
-    websiteNaga: 'https://nagaadminblog.naga.com/api'
+    websiteNaga: 'https://nagaadminblog.naga.com/api',
+    zakazURL: 'https://stores-api.zakaz.ua',
+    zakazUser: "380932107253",
+    zakazPassword: "3313804014"
+
 }
 
 if(env === 'bondar'){
