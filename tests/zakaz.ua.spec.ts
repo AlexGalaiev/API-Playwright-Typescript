@@ -29,7 +29,6 @@ test.describe('Zakaz.ua -> User profile', async()=>{
         expect(response.delivery.address.plan.region_id).toEqual("kiev")
         expect(response.delivery.address.plan.delivery_service_id).toEqual("zakaz")
         let userDeliveryJSONSchema = userDelivery.toJSONSchema()
-        let result = userDeliveryJSONSchema.safeParce()
-
+        let result =  userDeliveryJSONSchema.safeParc
     })
 })
