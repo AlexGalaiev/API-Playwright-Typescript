@@ -11,7 +11,10 @@ const config = {
     websiteNaga: 'https://nagaadminblog.naga.com/api',
     zakazURL: 'https://stores-api.zakaz.ua',
     zakazUser: "380932107253",
-    zakazPassword: "3313804014"
+    zakazPassword: "3313804014",
+    tuiURL: 'https://login.tui.nl',
+    tuiUser: 'sashagalaievsecond@gmail.com',
+    tuiPassword: 'Test123!'
 
 }
 

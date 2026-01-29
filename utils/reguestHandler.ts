@@ -71,10 +71,14 @@ export class RequestHandler{
     async POST_Request(statusCode: number){
         let url = this.getUrl()
         this.logger.logReguest('POST', url, {'headers': this.apiHeaders}, this.apiBody)
+        //add checking response form
+        const isForm = this.apiHeaders['content-type'] === 'application/x-www-form-urlencoded'
+        //add sending via different form
         let response = await this.request.post(
             url, {
                 headers: this.apiHeaders, 
-                data: this.apiBody
+                form: isForm ? this.apiBody : undefined,
+                data: !isForm ? this.apiBody : undefined
             })
         this.cleanUpFileds()
         let actualStatus = await response.status()

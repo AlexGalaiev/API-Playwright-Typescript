@@ -243,5 +243,12 @@ let loginPage: Page = {
 
 testPage(loginPage)
 
-
+interface Book {
+    id: number;
+    title: string;
+    author: string;
+    publishedYear: number;
+    isAvailable: boolean;
+    genre?: string;
+}
 
