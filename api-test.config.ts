@@ -14,7 +14,8 @@ const config = {
     zakazPassword: "3313804014",
     tuiURL: 'https://login.tui.nl',
     tuiUser: 'sashagalaievsecond@gmail.com',
-    tuiPassword: 'Test123!'
+    tuiPassword: 'Test123!',
+    rozetka: 'https://connect.rozetka.com.ua/api/v1/'
 
 }
 
